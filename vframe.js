@@ -24,7 +24,6 @@ function on_document_click( event )
     return;
     }
 
-  //alert( vframe.innerHTML );
   var href = target.href;
   http_get( href, function( xhr ) { http_get_handler( xhr, target, vframe ); } );
   
@@ -43,5 +42,8 @@ function http_get( url, callback )
 
 function http_get_handler( xhr, target, vframe )
 {
-  vframe.innerHTML = xhr.responseText;
+  if( xhr.status == 200 )
+    vframe.innerHTML = xhr.responseText;
+  else
+    alert( "Error requesting resource! Please, try again later..." );
 }
