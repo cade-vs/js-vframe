@@ -39,18 +39,18 @@ vFRAME is compact JavaScript HTML frames virtualization library.
 
 #  DESCRIPTION
 
-It uses <DIV> blocks as virtual frames. All links and forms inside virtual
-<DIV> frame will replace only the enclosing <DIV> frame content instead of
+It uses 'DIV' blocks as virtual frames. All links and forms inside virtual
+'DIV' frame will replace only the enclosing 'DIV' frame content instead of
 reloading the whole page. 
 
-To enable <DIV> to act as virtual frame, "vframe" class must be added (as
+To enable 'DIV' to act as virtual frame, "vframe" class must be added (as
 shown in the SYNOPSIS above).
 
 #  NOTES
 
-vFRAME is similar to <iframe> but very different than <frame>.
+vFRAME is similar to 'iframe' but very different than 'frame'.
 
-vFRAME replaces only the enclosing <DIV> and the result is homogeneousHTML text.
+vFRAME replaces only the enclosing 'DIV' and the result is homogeneousHTML text.
 
 vFRAME is written in native JavaScript and does not have further dependencies.
 
