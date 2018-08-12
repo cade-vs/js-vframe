@@ -54,7 +54,8 @@ vFRAME replaces only the enclosing 'DIV' and the result is homogeneousHTML text.
 
 vFRAME is written in native JavaScript and does not have further dependencies.
 
-vFRAME is tested with latest Firefox, Safari, Opera and Chrome.
+vFRAME is tested with latest Firefox, Safari, Opera and Chrome 
+(as of the latest vframe.js commit time. :))
 
 vFRAME is intentionally plain JS code without modern JS dev crap! It has no
 minified version, if you need one, you are free to make one :) If you do not
