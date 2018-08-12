@@ -1,9 +1,22 @@
-// 2018 (c) cade@bis.bg
+/*****************************************************************************
+**
+**  vFRAME -- VIRTUAL HTML FRAMES MACHINERY
+**  2018 (c) Vladi Belperchinov-Shabanski "Cade"
+**  <cade@bis.bg> <cade@cpan.org> <shabanski@gmail.com>
+**
+**  LICENSE: GPLv2
+**
+******************************************************************************
+**
+**  usage: html text <div class=vframe>virtual html frame</div> more html
+**
+**  note:  include <script src="vframe.js"></script> somewhere at the html end
+**
+**  for more, visit: https://github.com/cade-vs/js-vframe
+**
+*****************************************************************************/
 
 vframe_init();
-
-
-
 
 function vframe_init()
 {
@@ -27,7 +40,6 @@ function on_click_anchor( event, target )
   var vframe = target.closest( ".vframe" );
   if( ! vframe )
     {
-    //alert( "NOT FOUND" );
     return;
     }
 
@@ -43,7 +55,6 @@ function on_click_submit( event, target )
   var vframe = target.closest( ".vframe" );
   if( ! vframe )
     {
-    //alert( "NOT FOUND" );
     return;
     }
 
@@ -73,5 +84,7 @@ function http_request_handler( xhr, target, vframe )
   if( xhr.status == 200 )
     vframe.innerHTML = xhr.responseText;
   else
-    alert( "Error requesting resource! Please, try again later..." );
+    alert( "Error requesting resource! Please, try again later or contact server administrator..." );
 }
+
+/*** eof ********************************************************************/
