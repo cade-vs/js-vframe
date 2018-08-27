@@ -21,6 +21,9 @@ vFRAME is compact JavaScript HTML frames virtualization library.
         This is first <a href=go1.html>test</a>
     </div>
 
+    This is out-of-frame link, which points 
+    to <a href=go1.html data-vframe-target=testvframe1>target vframe</a>
+
     And another frame:
     
     <div class=vframe>
@@ -30,6 +33,11 @@ vFRAME is compact JavaScript HTML frames virtualization library.
         <p><input type=submit value="GO!">
         </form>
     </div>
+
+    <div class=vframe id=testvframe1>
+      *** target vframe here ***
+    </div>
+
 
     Here is footer text
     <script src="vframe.js"></script> 
@@ -45,6 +53,23 @@ reloading the whole page.
 
 To enable 'DIV' to act as virtual frame, "vframe" class must be added (as
 shown in the SYNOPSIS above).
+
+If any link has 'data-vframe-target' attribute, the result data will be
+replaced not in the current vFrame (or document) but inside a vFrame with
+an ID, pointed by 'data-vframe-target'.
+
+Here is an example:
+
+    This is out-of-frame link, which points 
+    to <a href=go1.html data-vframe-target=testvframe1>target vframe</a>
+
+    text....
+    text....
+    text....
+
+    <div class=vframe id=testvframe1>
+      *** target vframe here, result of link above will be replaced here ***
+    </div>
 
 #  NOTES
 

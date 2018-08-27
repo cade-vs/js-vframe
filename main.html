@@ -3,6 +3,10 @@ This is a frame for testing frames!
 <div class=vframe>
   This is first <a href=go1.html>test</a>
 </div>
+
+<p>
+This is out-of-frame link, which points to <a href=go1.html data-vframe-target=testvframe1>target vframe</a>
+
 And another frame:
 <div class=vframe>
 
@@ -12,6 +16,10 @@ And another frame:
   <p><input type=submit value="GO!">
   </form>
 
+</div>
+
+<div class=vframe id=testvframe1>
+  [target vframe here]
 </div>
 
 Here is static footer text

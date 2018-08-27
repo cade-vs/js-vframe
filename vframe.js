@@ -37,11 +37,17 @@ function on_document_click( event )
 
 function on_click_anchor( event, target )
 {  
-  var vframe = target.closest( ".vframe" );
+  var vframe;
+  
+  var vfr_target_id = target.dataset.vframeTarget;
+  if( vfr_target_id )
+    vframe = document.getElementById( vfr_target_id );
+
   if( ! vframe )
-    {
+    vframe = target.closest( ".vframe" );
+    
+  if( ! vframe )
     return;
-    }
 
   var href = target.href;
   http_get( href, function( xhr ) { http_request_handler( xhr, target, vframe ); } );
