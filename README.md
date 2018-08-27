@@ -56,7 +56,7 @@ shown in the SYNOPSIS above).
 
 If any link has "**data-vframe-target**" attribute, the result data will be
 replaced not in the current vFrame (or document) but inside a vFrame with
-an ID, pointed by 'data-vframe-target'.
+an ID, pointed by "**data-vframe-target**".
 
 Here is an example:
 
