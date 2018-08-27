@@ -51,10 +51,10 @@ It uses 'DIV' blocks as virtual frames. All links and forms inside virtual
 'DIV' frame will replace only the enclosing 'DIV' frame content instead of
 reloading the whole page. 
 
-To enable 'DIV' to act as virtual frame, "vframe" class must be added (as
+To enable 'DIV' to act as virtual frame, "**vframe**" class must be added (as
 shown in the SYNOPSIS above).
 
-If any link has 'data-vframe-target' attribute, the result data will be
+If any link has "**data-vframe-target**" attribute, the result data will be
 replaced not in the current vFrame (or document) but inside a vFrame with
 an ID, pointed by 'data-vframe-target'.
 
