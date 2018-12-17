@@ -27,12 +27,24 @@ function on_document_click( event )
 { 
   var target = event.target;
   
+  if( target.tagName == 'IMG'   ) // assumed IMG inside A
+    return on_click_img( event, target );
+
   if( target.tagName == 'A'     ) 
     return on_click_anchor( event, target );
   
   if( target.tagName == 'INPUT' && target.type == "submit" )
     return on_click_submit( event, target );
 
+}
+
+function on_click_img( event, target )
+{
+  var closest_target = target.closest( "A" );
+  if( closest_target )
+    return on_click_anchor( event, closest_target );
+  else
+    return false;  
 }
 
 function on_click_anchor( event, target )
