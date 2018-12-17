@@ -10,7 +10,7 @@
 **
 **  usage: html text <div class=vframe>virtual html frame</div> more html
 **
-**  note:  include <script src="vframe.js"></script> somewhere at the html end
+**  note:  include <script src="vframe.js"></script> somewhere in the html
 **
 **  for more, visit: https://github.com/cade-vs/js-vframe
 **
@@ -40,9 +40,9 @@ function on_document_click( event )
 
 function on_click_img( event, target )
 {
-  var closest_target = target.closest( "A" );
-  if( closest_target )
-    return on_click_anchor( event, closest_target );
+  var parent_target = target.parentElement;
+  if( parent_target.tagName == 'A' )
+    return on_click_anchor( event, parent_target );
   else
     return false;  
 }
