@@ -1,7 +1,7 @@
 /*****************************************************************************
 **
 **  vFRAME -- VIRTUAL HTML FRAMES MACHINERY
-**  2018 (c) Vladi Belperchinov-Shabanski "Cade"
+**  2018-2024 (c) Vladi Belperchinov-Shabanski "Cade"
 **  <cade@bis.bg> <cade@cpan.org> <shabanski@gmail.com>
 **
 **  LICENSE: GPLv2
@@ -30,10 +30,10 @@ function on_document_click( event )
   if( target.tagName == 'IMG'   ) // assumed IMG inside A
     return on_click_img( event, target );
 
-  if( target.tagName == 'A'     ) 
+  if( target.tagName == 'A' && target.target == ''    ) 
     return on_click_anchor( event, target );
-  
-  if( target.tagName == 'INPUT' && target.type == "submit" )
+
+  if( ( target.tagName == 'INPUT' && target.type == "submit" ) || target.tagName == 'BUTTON' )
     return on_click_submit( event, target );
 
 }
@@ -91,6 +91,7 @@ function http_get( url, callback )
 
 function http_request( method, url, data, callback )
 {
+    var cs  = document.characterSet;
     var xhr = new XMLHttpRequest();
     xhr.onload = function() { callback( xhr ); };
     xhr.open( method, url );
