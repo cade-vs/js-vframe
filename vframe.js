@@ -26,11 +26,11 @@ function vframe_init()
 function on_document_click( event ) 
 { 
   var target = event.target;
-  
+
   if( target.tagName == 'IMG'   ) // assumed IMG inside A
     return on_click_img( event, target );
 
-  if( target.tagName == 'A' && target.target == ''    ) 
+  if( target.tagName == 'A' ) 
     return on_click_anchor( event, target );
 
   if( ( target.tagName == 'INPUT' && target.type == "submit" ) || target.tagName == 'BUTTON' )
@@ -40,8 +40,8 @@ function on_document_click( event )
 
 function on_click_img( event, target )
 {
-  var parent_target = target.parentElement;
-  if( parent_target.tagName == 'A' )
+  var parent_target = target.closest( "A" );
+  if( parent_target )
     return on_click_anchor( event, parent_target );
   else
     return false;  
@@ -50,7 +50,10 @@ function on_click_img( event, target )
 function on_click_anchor( event, target )
 {  
   var vframe;
-  
+
+  if( target.target != '' )
+    return;
+
   var vfr_target_id = target.dataset.vframeTarget;
   if( vfr_target_id )
     vframe = document.getElementById( vfr_target_id );
