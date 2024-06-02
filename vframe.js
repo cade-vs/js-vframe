@@ -83,7 +83,8 @@ function on_click_submit( event, target )
   var data = new FormData( form );
   http_request( form.method, form.action, data, function( xhr ) { http_request_handler( xhr, target, vframe ); } );
 
-  event.stopPropagation(); 
+  if( event ) 
+    event.stopPropagation(); 
   return false; 
 }
 
